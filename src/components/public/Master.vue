@@ -17,9 +17,9 @@
 	import Toolbar from './Toolbar'
 
 	// CSS de Vuetify. La parte publica de la aplicacion usara Vuetify
-	import VuetifyCSS from '../../../../node_modules/vuetify/dist/vuetify.min.css'
+	import VuetifyCSS from '../../../node_modules/vuetify/dist/vuetify.min.css'
 	// CSS de Material Icons, va con Vuetify
-	import MaterialIconsCSS from '../../../../node_modules/material-design-icons/iconfont/material-icons.css'
+	import MaterialIconsCSS from '../../../node_modules/material-design-icons/iconfont/material-icons.css'
 
 	export default {
 		name: 'master',

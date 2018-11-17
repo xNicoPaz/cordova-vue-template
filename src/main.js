@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 // Bootstrap de la aplicacion
-import Bootstrap from './bootstrap'
+import bootstrap from './bootstrap'
 
 Vue.config.productionTip = false
 
