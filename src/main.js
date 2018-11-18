@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './vuex'
 
 // Bootstrap de la aplicacion
 import bootstrap from './bootstrap'
@@ -10,9 +11,10 @@ import bootstrap from './bootstrap'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+window.vueModel = new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

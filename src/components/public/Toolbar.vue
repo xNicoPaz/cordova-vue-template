@@ -5,7 +5,7 @@
 		
 			<v-spacer></v-spacer>
 
-			<v-btn class="blue">Login</v-btn>
+			<v-btn class="blue" @click="onLoginButtonClick">Login</v-btn>
 			<v-btn class="green">Register</v-btn>
 		</v-toolbar>
 	</div>
@@ -13,6 +13,11 @@
 <script>
 	export default{
 		props: [ 'title' ],
-		name: 'public-toolbar'
+		name: 'public-toolbar',
+		methods: {
+			onLoginButtonClick () {
+				this.$router.push('/login')
+			}
+		}
 	}	
 </script>

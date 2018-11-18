@@ -14,8 +14,12 @@
 							</v-toolbar>
 							<v-card-text>
 								<v-form>
-									<v-text-field prepend-icon="email" name="email" label="Email" type="text"></v-text-field>
-									<v-text-field prepend-icon="lock" name="password" label="Password" id="password" type="password"></v-text-field>
+									<v-text-field prepend-icon="email" name="email" label="Email" type="text"
+										v-model="loginForm.email"
+									></v-text-field>
+									<v-text-field prepend-icon="lock" name="password" label="Password" id="password" type="password"
+										v-model="loginForm.password"
+									></v-text-field>
 								</v-form>
 							</v-card-text>
 							<v-card-actions>
@@ -32,10 +36,31 @@
 </template>
 
 <script>
+	import { mapActions, mapGetters } from 'vuex'
+
 	export default {
+		data () {
+			return {
+				loginForm: {
+					email: null,
+					password: null
+				}
+			}
+		},
+		computed: {
+			...mapGetters({ 
+				email: '_public/loginEmail',
+				password: '_public/loginPassword'
+			})
+		},
 		methods: {
+			...mapActions({
+				attemptLogin: '_public/loginAttemptLogin'
+			}),
 			onLoginButtonClick () {
-				this.$router.push('/home/client')
+				this.attemptLogin({
+
+				})
 			}
 		}
 	}

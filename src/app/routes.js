@@ -1,3 +1,3 @@
-import Public from './public/routes'
+import _public from './public/routes'
 
-export default [...Public]
+export default [..._public]
