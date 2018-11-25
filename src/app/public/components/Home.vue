@@ -1,14 +1,14 @@
 <template>
 	<div>
 		<section>
-			<v-parallax src="/static/hero.jpeg" height="600">
+			<v-parallax v-bind:src="images.hero" height="600">
 				<v-layout
 				column
 				align-center
 				justify-center
 				class="white--text"
 				>
-				<img src="/static/vuetify.png" alt="Vuetify.js" height="200">
+				<img v-bind:src="images.vuetify" alt="Vuetify.js" height="200">
 				<h1 class="white--text mb-2 display-1 text-xs-center">Parallax Template</h1>
 				<div class="subheading mb-3 text-xs-center">Powered by Vuetify</div>
 				<v-btn
@@ -93,7 +93,7 @@
 </section>
 
 <section>
-	<v-parallax src="/static/section.jpg" height="380">
+	<v-parallax v-bind:src="images.section" height="380">
 		<v-layout column align-center justify-center>
 			<div class="headline white--text mb-3 text-xs-center">Web development has never been easier</div>
 			<em>Kick-start your application today</em>
@@ -166,5 +166,31 @@
 </div>
 </template>
 <script>
-	export default{}
+	import { mapGetters } from 'vuex'
+
+	export default{
+		data () {
+			return {
+				images: {
+					hero: null,
+					vuetify: null,
+					section: null
+				}
+			}
+		},
+		computed: {
+			...mapGetters({
+				imgHero: 'img/publicHero',
+				imgVuetify: 'img/publicVuetify',
+				imgSection: 'img/publicSection'
+			})
+		},
+		mounted () {
+			this.images = {
+				hero: this.imgHero,
+				vuetify: this.imgVuetify,
+				section: this.imgSection
+			}
+		}
+	}
 </script>
